@@ -12,15 +12,18 @@ class ItemPolicy
 
     public function viewAny(User $user): bool {}
 
-    public function view(User $user, Item $item): bool {}
+    public function view(User $user, Item $item): bool
+    {
+        return $user->id === $item->user_id;
+    }
 
-    public function create(User $user): bool {}
+    public function update(User $user, Item $item): bool
+    {
+        return $user->id === $item->user_id;
+    }
 
-    public function update(User $user, Item $item): bool {}
-
-    public function delete(User $user, Item $item): bool {}
-
-    public function restore(User $user, Item $item): bool {}
-
-    public function forceDelete(User $user, Item $item): bool {}
+    public function delete(User $user, Item $item): bool
+    {
+        return $user->id === $item->user_id;
+    }
 }
