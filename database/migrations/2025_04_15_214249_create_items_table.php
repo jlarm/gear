@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->uuid('uuid');
+            $table->uuid();
             $table->string('name');
             $table->string('size')->nullable();
             $table->float('weight')->nullable();
