@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedInteger('price')->nullable();
             $table->string('status');
             $table->dateTime('sold_at')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
